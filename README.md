@@ -4,11 +4,22 @@ Embeddings are vector representations of words or sentences. They are used in LL
 
 For instance, in this notebook I’ve encoded a set of 5 events and 5 queries about these events into embeddings using the lightweight all-MiniLM encoder model. 
 
-<img width="821" height="401" alt="image" src="https://github.com/user-attachments/assets/b6fea0cb-abde-4841-a9f7-45663da785c7" />
+`events = [
+    "The player entered the dark cave.",
+    "The dragon sleeps on a pile of gold.",
+    "The merchant offered a healing potion.",
+    "The knight swore loyalty to the kings.",
+    "The village was attacked by bandits."
+]`
+`model = SentenceTransformer("all-MiniLM-L6-v2")
+embeddings = model.encode(events, convert_to_numpy=True)`
 
 Now, we need a way to store these vectors and query them to do interesting things. FAISS is a database which allows for fast index search, instead of looping through manually. 
 
-<img width="758" height="232" alt="image" src="https://github.com/user-attachments/assets/f53ae125-a075-47a3-8d7b-a0d773c085d6" />
+`d = embeddings.shape[1]
+index = faiss.IndexFlatL2(d)
+index.add(embeddings)
+print("Number of vectors indexed:", index.ntotal)`
 
 Since they are vectors, I can compare them using FAISS to find shortest euclidian distance between them and find which event has an answer to which query, because similar sentences will be close to each other in this vector space!
 
