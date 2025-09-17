@@ -10,7 +10,7 @@ Now, we need a way to store these vectors and query them to do interesting thing
 
 <img width="758" height="232" alt="image" src="https://github.com/user-attachments/assets/f53ae125-a075-47a3-8d7b-a0d773c085d6" />
 
-Since they are vectors, I can compare them using FAISS to finding shortest euclidian distance between them and find which event has an answer to which query, because similar sentences will be close to each other in this vector space!
+Since they are vectors, I can compare them using FAISS to find shortest euclidian distance between them and find which event has an answer to which query, because similar sentences will be close to each other in this vector space!
 
 <img width="1112" height="1041" alt="image" src="https://github.com/user-attachments/assets/35173421-0948-417d-89a6-5536c484f221" />
 
