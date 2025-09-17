@@ -12,11 +12,10 @@ E.g. FAISS fails to infer “dragon owns treasure” since ownership is not expl
 
 👉 [View the full notebook here](Simple_Encoder+FAISS.ipynb)
 
----
-
-### Planned Next Experiments
+#### Planned Next Experiments
 - Episodic memory with retrieval chains  
 - Simple reasoning on top of embeddings 
 
+---
 
 
