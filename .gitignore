@@ -1,0 +1,58 @@
+# -------------------------------
+# Jupyter & Notebooks
+# -------------------------------
+.ipynb_checkpoints/
+*.nbconvert.ipynb
+
+# -------------------------------
+# Python
+# -------------------------------
+__pycache__/
+*.py[cod]
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+
+# -------------------------------
+# Virtual Environments
+# -------------------------------
+.env
+.venv
+env/
+venv/
+ENV/
+pip-wheel-metadata/
+*.lock
+
+# -------------------------------
+# Machine Learning / LLM Artifacts
+# -------------------------------
+# Datasets
+data/
+*.csv
+*.tsv
+*.parquet
+*.h5
+*.npz
+*.pkl
+*.joblib
+
+# Model checkpoints and weights
+checkpoints/
+models/
+*.pt
+*.bin
+*.ckpt
+*.onnx
+*.pb
+*.tflite
+
+# Hugging Face cache
+~/.cache/huggingface/
+.huggingface/
+
+# Transformers / Tokenizers cache
+~/.cache/torch/
+~/.cache/tra
