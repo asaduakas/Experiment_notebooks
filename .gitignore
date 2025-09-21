@@ -56,3 +56,9 @@ models/
 # Transformers / Tokenizers cache
 ~/.cache/torch/
 ~/.cache/tra
+
+# -------------------------------
+# OS Related
+# -------------------------------
+.DS_Store
+
