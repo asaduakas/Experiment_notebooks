@@ -1,0 +1,80 @@
+{"id":"cs_001", "category":"contradiction", "player_action":"I attack the dragon", "world_facts":["The great dragon is dead"], "retrieved_memories":["The party killed the dragon"], "expected_behavior":"Model should indicate that dragon is already dead", "notes":"User tries to act on an entity that no longer exists; realistic DM contradiction."}
+
+{"id": "cs_002", "category":"contradiction", "player_action":"I take the treasure", "world_facts":"I take the treasure", "world_facts":["treasure is guarded by dragon"], "retrieved_memories":["Dragon is asleep in the cave"], "expected_behavior":"Model should reconcile or clarify if dragon is present", "notes": "Test transient memory vs canonical fact."}
+
+{"id": "cs_003", "category": "contradiction", "player_action": "I ask the wizard for help", "world_facts": ["wizard is hostile"], "retrieved_memories": ["Wizard helped the party"], "expected_behavior": "Model should flag potential inconsistency and roleplay cautiously", "notes": "Tests reasoning when user relies on past events conflicting with current world state."}
+
+{"id": "cs_004", "category": "contradiction", "player_action": "I open the village gate", "world_facts": ["village gate is locked"], "retrieved_memories": ["Guard said gate is unlocked"], "expected_behavior": "Model should clarify gate status and prevent impossible action", "notes": "Memory may be outdated; tests handling temporal contradictions."}
+
+{"id": "cs_005", "category": "contradiction", "player_action": "I take the magic sword", "world_facts": ["sword is cursed and cannot be removed"], "retrieved_memories": ["Player1 wielded the sword"], "expected_behavior": "Model should warn or reject the action based on world facts", "notes": "Tests enforcing immutable world facts against retrieved memory or user expectation."}
+
+"id": "cs_006", "category": "contradiction", "player_action": "I light the torch", "world_facts": ["torch is extinguished"], "retrieved_memories": ["Player2 lit the torch"], "expected_behavior": "Model should narrate torch being relit", "notes": "Memory shows prior state, world facts updated."}
+
+{"id": "cs_007", "category": "contradiction", "player_action": "I speak to the guard", "world_facts": ["guard is asleep"], "retrieved_memories": ["Guard patrolling"], "expected_behavior": "Narrate guard is unavailable", "notes": "Temporal contradiction resolved."}
+
+{"id": "cs_008", "category": "contradiction", "player_action": "I drink the potion", "world_facts": ["potion is poisonous"], "retrieved_memories": ["Player3 drank potion"], "expected_behavior": "Warn about poison", "notes": "Memory supports but user action may be dangerous."}
+
+{"id": "cs_009", "category": "contradiction", "player_action": "I open the chest", "world_facts": ["chest is trapped"], "retrieved_memories": ["Chest is safe"], "expected_behavior": "Warn or narrate trap", "notes": "Memory outdated vs canonical fact."}
+
+{"id": "cs_010", "category": "contradiction", "player_action": "I cast a spell on the dragon", "world_facts": ["dragon is immune to magic"], "retrieved_memories": ["Dragon hurt by magic"], "expected_behavior": "Flag immunity and narrate failure", "notes": "User action vs world fact; memory shows prior temporary state."}
+
+{"id": "cs_011", "category": "contradiction", "player_action": "I talk to the sleeping dragon", "world_facts": ["dragon is dead"], "retrieved_memories": ["Dragon guarding treasure"], "expected_behavior": "Model should indicate dragon cannot be spoken to", "notes": "Memory outdated vs world fact."}
+
+{"id": "cs_012", "category": "contradiction", "player_action": "I steal the guard's key", "world_facts": ["guard is not present"], "retrieved_memories": ["Guard patrolled village gate"], "expected_behavior": "Narrate key unavailable or missing", "notes": "Temporal contradiction; guard moved or absent."}
+
+{"id": "cs_013", "category": "contradiction", "player_action": "I drink from the fountain", "world_facts": ["fountain water is poisoned"], "retrieved_memories": ["Players drank safely"], "expected_behavior": "Narrate poisoning", "notes": "Past safe action vs updated world fact."}
+
+{"id": "cs_014", "category": "contradiction", "player_action": "I enter the castle", "world_facts": ["castle gates are locked"], "retrieved_memories": ["Players entered freely"], "expected_behavior": "Narrate gate locked; cannot enter", "notes": "Temporal contradiction resolved."}
+
+{"id": "cs_015", "category": "contradiction", "player_action": "I attack the bandits", "world_facts": ["bandits have fled"], "retrieved_memories": ["Bandits ambushed players"], "expected_behavior": "Indicate bandits not present", "notes": "Past combat memory vs current world state."}
+
+{"id": "cs_016", "category": "contradiction", "player_action": "I light the bonfire", "world_facts": ["bonfire is already lit"], "retrieved_memories": ["Player2 lit the bonfire"], "expected_behavior": "Narrate bonfire is already lit", "notes": "Repeated action; memory matches world fact."}
+
+{"id": "cs_017", "category": "contradiction", "player_action": "I open the treasure chest", "world_facts": ["chest is empty"], "retrieved_memories": ["Player1 stored gold in the chest"], "expected_behavior": "Narrate chest is empty; warn player", "notes": "Memory may be misleading due to item removal."}
+
+{"id": "cs_018", "category": "contradiction", "player_action": "I cast fireball in the town", "world_facts": ["town is under protection spell"], "retrieved_memories": ["Player cast fireball outside town"], "expected_behavior": "Narrate spell fails due to protection", "notes": "Memory irrelevant; world fact prevents action."}
+
+{"id": "cs_019", "category": "contradiction", "player_action": "I negotiate with the merchant", "world_facts": ["merchant is angry"], "retrieved_memories": ["Merchant traded fairly"], "expected_behavior": "Model should narrate difficult negotiation", "notes": "User expects friendly NPC; world fact contradicts tone."}
+
+{"id": "cs_020", "category": "contradiction", "player_action": "I unlock the gate", "world_facts": ["player does not have key"], "retrieved_memories": ["Player has key"], "expected_behavior": "Narrate gate cannot be unlocked", "notes": "Memory outdated; world fact enforced."}
+
+{"id": "cs_021", "category": "contradiction", "player_action": "I pick up the cursed amulet", "world_facts": ["amulet cannot be touched"], "retrieved_memories": ["Amulet lies on the altar"], "expected_behavior": "Warn player cannot pick up amulet", "notes": "Memory shows amulet location; world fact restricts interaction."}
+
+{"id": "cs_022", "category": "contradiction", "player_action": "I cross the bridge", "world_facts": ["bridge collapsed"], "retrieved_memories": ["Bridge spans river"], "expected_behavior": "Narrate bridge is impassable", "notes": "Memory accurate description; world fact prevents crossing."}
+
+{"id": "cs_023", "category": "contradiction", "player_action": "I talk to the merchant", "world_facts": ["merchant is angry"], "retrieved_memories": ["Merchant sells potions"], "expected_behavior": "Narrate negotiation difficulty", "notes": "Memory shows merchant traits; world fact defines current mood."}
+
+{"id": "cs_024", "category": "contradiction", "player_action": "I steal the royal crown", "world_facts": ["crown is locked in vault"], "retrieved_memories": ["Crown is on display"], "expected_behavior": "Indicate action impossible", "notes": "Memory describes location; world fact enforces access restriction."}
+
+{"id": "cs_025", "category": "contradiction", "player_action": "I feed the dragon", "world_facts": ["dragon is dead"], "retrieved_memories": ["Dragon guards treasure"], "expected_behavior": "Narrate dragon cannot be fed", "notes": "User tries impossible action; memory reconciled by world fact."}
+
+{"id": "cs_026", "category": "contradiction", "player_action": "I open the secret door", "world_facts": ["door is magically sealed"], "retrieved_memories": ["Door leads to hidden chamber"], "expected_behavior": "Warn or narrate sealed door", "notes": "Memory accurate; world fact prevents action."}
+
+{"id": "cs_027", "category": "contradiction", "player_action": "I attack the bandits", "world_facts": ["bandits are imprisoned"], "retrieved_memories": ["Bandits attacked village"], "expected_behavior": "Narrate bandits not present", "notes": "Memory describes past aggression; world fact prevents attack."}
+
+{"id": "cs_028", "category": "contradiction", "player_action": "I drink the elixir", "world_facts": ["elixir causes paralysis"], "retrieved_memories": ["Player observed elixir"], "expected_behavior": "Narrate paralysis caused by the elixir", "notes": "Memory neutral; world fact defines hazard."}
+
+{"id": "cs_029", "category": "contradiction", "player_action": "I ride the horse", "world_facts": ["horse is sick"], "retrieved_memories": ["Horse is in stable"], "expected_behavior": "Narrate horse cannot be ridden", "notes": "Memory location accurate; world fact blocks action."}
+
+{"id": "cs_030", "category": "contradiction", "player_action": "I cast invisibility on the town guard", "world_facts": ["guard is immune to magic"], "retrieved_memories": ["Guard stands by town gate"], "expected_behavior": "Narrate spell has no effect", "notes": "Memory provides context; world fact prevents action."}
+
+{"id": "cs_031", "category": "contradiction", "player_action": "I drink from the fountain", "world_facts": ["fountain water is poisoned"], "retrieved_memories": ["Fountain stands in town square"], "expected_behavior": "Model narrates damaging consequences", "notes": "Player unaware of hidden hazard; memory neutral."}
+
+{"id": "cs_032", "category": "contradiction", "player_action": "I open the old chest", "world_facts": ["chest is trapped"], "retrieved_memories": ["Chest lies under the table"], "expected_behavior": "Narrate trap", "notes": "Memory location accurate; world fact hidden hazard."}
+
+{"id": "cs_033", "category": "contradiction", "player_action": "I pick up the gem", "world_facts": ["gem is cursed"], "retrieved_memories": ["Gem rests on pedestal"], "expected_behavior": "Narrate curse effect", "notes": "Memory describes placement; world fact adds hidden danger."}
+
+{"id": "cs_034", "category": "contradiction", "player_action": "I speak to the guard", "world_facts": ["guard is bribed by rival faction"], "retrieved_memories": ["Guard patrols town gate"], "expected_behavior": "Narrate guarded response; subtle hint of allegiance", "notes": "Memory neutral; world fact unknown to player."}
+
+{"id": "cs_035", "category": "contradiction", "player_action": "I light the lantern", "world_facts": ["oil inside lantern is flammable and unstable"], "retrieved_memories": ["Lantern hangs by the door"], "expected_behavior": "Narrate potential hazard; model may warn subtly", "notes": "Memory location correct; hidden world fact introduces risk."}
+
+{"id": "cs_036", "category": "contradiction", "player_action": "I jump across the pit", "world_facts": ["pit width exceeds safe jump distance"], "retrieved_memories": ["Pit separates two cliffs"], "expected_behavior": "Warn player or narrate fall", "notes": "Memory neutral; world fact creates realistic contradiction."}
+
+{"id": "cs_037", "category": "contradiction", "player_action": "I strike the bandit", "world_facts": ["bandit is disguised as villager"], "retrieved_memories": ["Bandit waits near market"], "expected_behavior": "Narrate potential mistake; caution player", "notes": "Memory describes location; world fact hidden identity."}
+
+{"id": "cs_038", "category": "contradiction", "player_action": "I open the magic portal", "world_facts": ["portal requires key to activate"], "retrieved_memories": ["Portal shimmers faintly"], "expected_behavior": "Indicate portal inactive", "notes": "Memory neutral; hidden world fact blocks action."}
+
+
+{"id": "cs_039", "category": "contradiction", "player_action": "I open the sealed tomb", "world_facts": ["tomb is magically trapped"], "retrieved_memories": ["Tomb entrance is intact"], "expected_behavior": "Narrate trap", "notes": "Memory describes tomb visually; world fact contains hidden hazard."}
+
+
