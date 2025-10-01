@@ -26,7 +26,8 @@ E.g. FAISS fails to infer “dragon owns treasure” since ownership is not expl
 - Used a local Mistralai-7B model as decoder.
 
 **Key takeaway:**  
-Episodic memory with metadata lets the DM model recall past events and enrich context beyond raw surface similarity. But contradictions still appear if world facts and memories clash (e.g. “dragon is alive” vs “dragon was killed”). This highlights the need for conflict resolution in the memory pipeline.
+Episodic memory with metadata lets the DM model recall past events and enrich context beyond raw surface similarity. But contradictions still appear if world facts and memories clash (e.g. “dragon is alive” vs “dragon was killed”). This highlights the need for conflict resolution in the memory pipeline. 
+In addition, when comparing embeddings in high-dimenstions, use cosine similarity and NOT Euclidean. When comparing many cosine similarities, matrix multiplication is your friend!
 
 👉 [View the full notebook here](Episodic_Memory+RAG_barebones.ipynb)
 
