@@ -10,7 +10,7 @@ This repo is a collection of small experiments on LLM internals, embeddings, and
 Embeddings capture *surface similarity*, but not reasoning.  
 E.g. FAISS fails to infer “dragon owns treasure” since ownership is not explicit.  
 
-👉 [View the full notebook here](Simple_Encoder+FAISS.ipynb)
+👉 [View the full notebook here](notebooks/01_faiss_encoder.ipynb)
 
 #### Planned Next Experiments
 - Episodic memory with retrieval chains  
@@ -29,7 +29,7 @@ E.g. FAISS fails to infer “dragon owns treasure” since ownership is not expl
 Episodic memory with metadata lets the DM model recall past events and enrich context beyond raw surface similarity. But contradictions still appear if world facts and memories clash (e.g. “dragon is alive” vs “dragon was killed”). This highlights the need for conflict resolution in the memory pipeline. 
 In addition, when comparing embeddings in high-dimenstions, use cosine similarity and NOT Euclidean. When comparing many cosine similarities, matrix multiplication is your friend!
 
-👉 [View the full notebook here](Episodic_Memory+RAG_barebones.ipynb)
+👉 [View the full notebook here](notebooks/02_episodic_memory.ipynb)
 
 #### Planned Next Experiments
 - Add contradiction detection between world facts and memories (Prototype 3).
