@@ -35,3 +35,32 @@ In addition, when comparing embeddings in high-dimenstions, use cosine similarit
 - Add contradiction detection between world facts and memories (Prototype 3).
 - Introduce summarization module to compress long histories.
 - Test evaluation metrics: Recall@K, contradiction rate, grounding fraction.
+
+---
+### 3. Zero-Shot Contradiction Checker
+**Goal:** Detect logical contradictions between the player's next action and the current world state or past memories.
+
+**Approach:**
+- Used `facebook/bart-large-mnli` in a zero-shot setup to classify contradictions.
+- For each test case, the player's action is compared against:
+  - World Facts (canonical truth of the game world)
+  - Retrieved memories (episodic history from past turns)
+- Each `(fact, action)` pair is passed through the NLI model, returning a contradiction probability.
+- If the probability exceeds a configurable threshold (default = 0.6), it's flaggeed as a potential conflict.
+
+**Automated Test Suite:**
+- Test cases are stored in `tests/contradiction_suite_v1.0.jsonl`
+- Each entry defines:
+  - `player_action`,`world_facts`, `retrieved_memories`
+  - Expected behavior: `contradiction` or `no_contradiction`
+- The evaluator script runs all cases, compares predicted vs expected behavior, and prints a summary of passes/fails.
+
+**Key Takeaway:**
+- World facts are treated as canonical truth, while retrieved memories serve as *subjective* or *possibly outdated* recollections.
+- Not all contradictions are equal:
+  - **Hard contradictions:** Impossible actions (e.g. "talk to the dead dragon")
+  - **Soft contradictions:** Technically possible, but world logic alters outcome (e.g. "cast fireball in protected town" -> spell fizzles)
+  - These findings suggest a need for graded contradiction handling, distinguishing between strict impossibility and expectation mismatch.
+ 
+👉 Next step:
+Integrate a reasoning layer that classifies contradictions into severity tiers and suggests corrective world updates or narrative clarifications.
