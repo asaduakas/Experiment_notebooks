@@ -62,5 +62,7 @@ In addition, when comparing embeddings in high-dimenstions, use cosine similarit
   - **Soft contradictions:** Technically possible, but world logic alters outcome (e.g. "cast fireball in protected town" -> spell fizzles)
   - These findings suggest a need for graded contradiction handling, distinguishing between strict impossibility and expectation mismatch.
  
-👉 Next step:
+👉 [View the full notebook here](notebooks/03_zero_shot_contradiction_checker.ipynb)
+ 
+### PLanned Next Experiments
 Integrate a reasoning layer that classifies contradictions into severity tiers and suggests corrective world updates or narrative clarifications.
